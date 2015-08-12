@@ -136,6 +136,15 @@ POST and GET http requests are only supported ( might be changed in the future )
     generate swat data for GET /hello/world ...
 
 
+=head1 specify routes checks
+
+This phase might be skiped as preliminary `200 OK` checks are already added added on bootstrap phase. But you may define ones more:
+
+    $ echo ROOT >> swat/get.txt
+    $ echo HELLO >> swat/hello/post.txt
+    $ echo HELLO WORLD >> swat/hello/world/get.txt
+
+
 =head1 install swat
 
     sudo cpanm swat
