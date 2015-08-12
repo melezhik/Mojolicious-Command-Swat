@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Mojolicious::Command::swat',
     VERSION_FROM      => 'lib/Mojolicious/Command/swat.pm', # finds $VERSION, requires EU::MM from perl >= 5.5
-    PREREQ_PM         => { 'Mojolicious' => 0 }, # e.g., Module::Name => 1.1
+    PREREQ_PM         => { }, # e.g., Module::Name => 1.1
     ABSTRACT_FROM     => 'lib/Mojolicious/Command/swat.pm', # retrieve abstract from module
     AUTHOR            => 'Alexey Melezhik <melezhik@gmail.com>',
     #LICENSE           => 'perl',

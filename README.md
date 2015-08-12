@@ -62,7 +62,7 @@ POST and GET http requests are only supported ( might be changed in the future )
 
 # install Mojolicious::Command::swat
 
-    sudo cpanm Mojolicious::Command::swat
+    sudo cpanm --mirror-only --mirror https://stratopan.com/melezhik/mojolicious-command-swat/master Mojolicious::Command::swat
 
 ## bootstrap swat tests
 
