@@ -13,11 +13,11 @@ has usage => sub { shift->extract_usage };
 sub run {
   my ($self, @args) = @_;
 
-  GetOptionsFromArray \@args, 'f|force' => \my $force, 'v|verbose' => \my $verbose;
+  GetOptionsFromArray \@args, 'f|force' => \my $force;
 
   my $rows = [];
 
-    _walk($_, 0, $rows, $verbose) for @{$self->app->routes->children};
+    _walk($_, 0, $rows, 0) for @{$self->app->routes->children};
 
     ROUTE: for my $i (@$rows){
 
