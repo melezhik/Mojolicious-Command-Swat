@@ -63,7 +63,7 @@ Mojolicious::Command::swat - Swat command
 
 =head1 SYNOPSIS
 
-  Usage: APPLICATION routes [OPTIONS]
+  Usage: APPLICATION swat [OPTIONS]
 
   Options:
     -f, --force   Override existed swat tests
@@ -76,9 +76,71 @@ This command walk through all availbale routes and generate a swat test for ever
 POST and GET http requests are only supported ( might be changed in the future ).
 
 
-SWAT is a Simple Web Application Test ( FrameWork )
-
 =head1 Hello World Example 
+
+
+=head2 install mojo
+
+    sudo cpanm Mojolicious
+
+=head2 bootstrap a mojo application
+
+    mkdir myapp
+    cd myapp
+    mojo generate lite_app myapp.pl
+    
+=head2 define routes
+
+
+    $ nano myapp.pl
+
+    #!/usr/bin/env perl
+    use Mojolicious::Lite;
+    
+    get '/' => sub {
+      my $c = shift;
+      $c->render(text => 'ROOT');
+    };
+    
+    
+    post '/hello' => sub {
+      my $c = shift;
+      $c->render(text => 'HELLO');
+    };
+    
+    get '/hello/world' => sub {
+      my $c = shift;
+      $c->render(text => 'HELLO WORLD');
+    };
+    
+    app->start;
+    
+
+    $ ./myapp.pl routes
+    /             GET
+    /hello        POST  hello
+    /hello/world  GET   helloworld
+
+=head1 install Mojolicious::Command::swat
+
+    sudo cpanm Mojolicious::Command::swat
+
+=head2 bootstrap swat tests
+
+    $ ./myapp.pl swat
+    generate swat route for / ...
+    generate swat data for GET / ...
+    generate swat route for /hello ...
+    generate swat data for POST /hello ...
+    generate swat route for /hello/world ...
+    generate swat data for GET /hello/world ...
+
+
+=head1 install swat
+
+    sudo cpanm swat
+
+=head1 run swat tests
 
 
 =head1 SEE ALSO
