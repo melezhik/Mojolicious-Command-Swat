@@ -12,9 +12,9 @@ WriteMakefile(
     #http://search.cpan.org/perldoc?Module%3A%3ABuild%3A%3AAPI
     META_ADD => {
         provides => {
-            'swat' => {
+            'Mojolicious::Command::swat' => {
                 file => 'lib/Mojolicious/Command/swat.pm',
-                version => '0.0.1'
+                version => '0.0.2'
             },
         },
 },

@@ -1,6 +1,6 @@
 package Mojolicious::Command::swat;
 
-our $VERSION = 'v0.1.20';
+our $VERSION = 'v0.0.2';
 
 use Mojo::Base 'Mojolicious::Command';
 
