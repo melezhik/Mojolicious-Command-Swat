@@ -1,4 +1,7 @@
 package Mojolicious::Command::swat;
+
+our $VERSION = 'v0.1.20';
+
 use Mojo::Base 'Mojolicious::Command';
 
 use re 'regexp_pattern';
@@ -13,7 +16,31 @@ sub run {
   GetOptionsFromArray \@args, 'f|force' => \my $force;
 
   my $rows = [];
-  _walk($_, 0, $rows, $verbose) for @{$self->app->routes->children};
+
+    _walk($_, 0, $rows, $verbose) for @{$self->app->routes->children};
+
+    ROUTE: for my $i (@$rows){
+
+        my $http_method = $i->[1];
+        my $route  = $i->[0];
+
+        unless ($http_method=~/GET|POST/i){
+            warn "sorry, swat does not support $http_method methods yet ...";
+            next ROUTE;
+        }
+
+        print "generate swat route for $route ... \n";
+        mkdir "swat/$route";
+
+        print "generate swat data for $http_method $route ... \n";
+        my $filename = "swat/$route/";
+        $filename.=lc($http_method); $filename.=".txt";
+        open(my $fh, '>', $filename) or die "Could not open file '$filename' $!";
+        print $fh "200 OK\n";
+        close $fh;
+
+   }
+
 
 }
 

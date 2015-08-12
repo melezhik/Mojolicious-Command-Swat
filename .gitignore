@@ -1,0 +1,11 @@
+MYMETA.json
+MYMETA.yml
+Makefile
+Makefile.old
+MANIFEST.bak
+blib/
+pm_to_blib
+Mojolicious-Command-swat-v*
+*.html
+*.tmp
+
