@@ -1,0 +1,9 @@
+.git
+blib
+\.old
+\.tar
+\.bak
+\.SKIP
+\.html
+\.pod
+\.tmp
