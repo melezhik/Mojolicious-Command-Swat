@@ -165,7 +165,8 @@ POST and GET http requests are only supported ( might be changed in the future )
 
 =head2 specify routes checks
 
-This phase might be skiped as preliminary `200 OK` checks are already added on bootstrap phase. But you may define ones more:
+This phase might be skiped as preliminary `200 OK` checks are already added on bootstrap phase. But you may define ones more. 
+For complete documentation on *how to write swat tests*  please visit  https://github.com/melezhik/swat
 
     $ echo ROOT >> swat/get.txt
     $ echo HELLO >> swat/hello/post.txt

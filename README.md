@@ -76,7 +76,8 @@ POST and GET http requests are only supported ( might be changed in the future )
 
 ## specify routes checks
 
-This phase might be skiped as preliminary \`200 OK\` checks are already added on bootstrap phase. But you may define ones more. For complete documentation on *how to write swat tests*  please visit  https://github.com/melezhik/swat 
+This phase might be skiped as preliminary \`200 OK\` checks are already added on bootstrap phase. But you may define ones more. 
+For complete documentation on \*how to write swat tests\*  please visit  https://github.com/melezhik/swat
 
     $ echo ROOT >> swat/get.txt
     $ echo HELLO >> swat/hello/post.txt
@@ -129,5 +130,4 @@ This phase might be skiped as preliminary \`200 OK\` checks are already added on
 
 # SEE ALSO
 
-[swat][https://github.com/melezhik/swat]
 [Mojolicious](https://metacpan.org/pod/Mojolicious), [Mojolicious::Guides](https://metacpan.org/pod/Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us).
