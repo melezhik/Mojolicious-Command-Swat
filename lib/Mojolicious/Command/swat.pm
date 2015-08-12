@@ -13,7 +13,7 @@ has usage => sub { shift->extract_usage };
 sub run {
   my ($self, @args) = @_;
 
-  GetOptionsFromArray \@args, 'f|force' => \my $force;
+  GetOptionsFromArray \@args, 'f|force' => \my $force, 'v|verbose' => \my $verbose;
 
   my $rows = [];
 
