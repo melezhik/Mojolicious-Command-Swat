@@ -163,7 +163,8 @@ This phase might be skiped as preliminary `200 OK` checks are already added on b
     ok 1 - successfull response from GET http://127.0.0.1:3000/
     # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000///content.GET.txt
     ok 2 - GET / returns 200 OK
-    1..2
+    ok 3 - GET / returns ROOT
+    1..3
     ok
     /home/vagrant/.swat/reports/http://127.0.0.1:3000/hello/00.post.t ...
     # start swat for http://127.0.0.1:3000//hello | is swat package 0
@@ -171,7 +172,8 @@ This phase might be skiped as preliminary `200 OK` checks are already added on b
     ok 1 - successfull response from POST http://127.0.0.1:3000/hello
     # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000//hello/content.POST.txt
     ok 2 - POST /hello returns 200 OK
-    1..2
+    ok 3 - POST /hello returns HELLO
+    1..3
     ok
     /home/vagrant/.swat/reports/http://127.0.0.1:3000/hello/world/00.t ..
     # start swat for http://127.0.0.1:3000//hello/world | is swat package 0
@@ -179,12 +181,13 @@ This phase might be skiped as preliminary `200 OK` checks are already added on b
     ok 1 - successfull response from GET http://127.0.0.1:3000/hello/world
     # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000//hello/world/content.GET.txt
     ok 2 - GET /hello/world returns 200 OK
-    1..2
+    ok 3 - GET /hello/world returns HELLO WORLD
+    1..3
     ok
     All tests successful.
-    Files=3, Tests=6,  0 wallclock secs ( 0.01 usr  0.01 sys +  0.04 cusr  0.00 csys =  0.06 CPU)
+    Files=3, Tests=9,  0 wallclock secs ( 0.02 usr  0.00 sys +  0.02 cusr  0.00 csys =  0.04 CPU)
     Result: PASS
-    
+        
     
 =head1 SEE ALSO
 
