@@ -74,19 +74,55 @@ POST and GET http requests are only supported ( might be changed in the future )
     generate swat route for /hello/world ...
     generate swat data for GET /hello/world ...
 
-# specify routes checks
+## specify routes checks
 
-This phase might be skiped as preliminary \`200 OK\` checks are already added added on bootstrap phase. But you may define ones more:
+This phase might be skiped as preliminary \`200 OK\` checks are already added on bootstrap phase. But you may define ones more:
 
     $ echo ROOT >> swat/get.txt
     $ echo HELLO >> swat/hello/post.txt
     $ echo HELLO WORLD >> swat/hello/world/get.txt
 
-# install swat
+## start mojo application
+
+    $ morbo ./myapp.pl
+    Server available at http://127.0.0.1:3000
+
+## install swat
 
     sudo cpanm swat
 
-# run swat tests
+## run swat tests
+
+    $ swat ./swat/  http://127.0.0.1:3000
+    /home/vagrant/.swat/reports/http://127.0.0.1:3000/00.t ..............
+    # start swat for http://127.0.0.1:3000// | is swat package 0
+    # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
+    ok 1 - successfull response from GET http://127.0.0.1:3000/
+    # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000///content.GET.txt
+    ok 2 - GET / returns 200 OK
+    1..2
+    ok
+    /home/vagrant/.swat/reports/http://127.0.0.1:3000/hello/00.post.t ...
+    # start swat for http://127.0.0.1:3000//hello | is swat package 0
+    # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
+    ok 1 - successfull response from POST http://127.0.0.1:3000/hello
+    # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000//hello/content.POST.txt
+    ok 2 - POST /hello returns 200 OK
+    1..2
+    ok
+    /home/vagrant/.swat/reports/http://127.0.0.1:3000/hello/world/00.t ..
+    # start swat for http://127.0.0.1:3000//hello/world | is swat package 0
+    # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
+    ok 1 - successfull response from GET http://127.0.0.1:3000/hello/world
+    # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000//hello/world/content.GET.txt
+    ok 2 - GET /hello/world returns 200 OK
+    1..2
+    ok
+    All tests successful.
+    Files=3, Tests=6,  0 wallclock secs ( 0.01 usr  0.01 sys +  0.04 cusr  0.00 csys =  0.06 CPU)
+    Result: PASS
+    
+    
 
 # SEE ALSO
 
