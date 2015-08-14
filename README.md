@@ -11,7 +11,7 @@ Mojolicious::Command::swat - Swat command
 
 # DESCRIPTION
 
-[Mojolicious::Command::swat](https://metacpan.org/pod/Mojolicious::Command::swat) generate swat tests for mojo routes.
+[Mojolicious::Command::swat](https://metacpan.org/pod/Mojolicious::Command::swat) generate [swat tests](https://github.com/melezhik/) for mojo routes.
 
 This command walk through all availbale routes and generate a swat test for every one. 
 POST and GET http requests are only supported ( might be changed in the future ).
