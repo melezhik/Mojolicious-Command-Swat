@@ -1,6 +1,6 @@
 package Mojolicious::Command::swat;
 
-our $VERSION = 'v0.0.2';
+our $VERSION = 'v0.0.3';
 
 use Mojo::Base 'Mojolicious::Command';
 
@@ -25,19 +25,29 @@ sub run {
         my $route  = $i->[0];
 
         unless ($http_method=~/GET|POST/i){
-            warn "sorry, swat does not support $http_method methods yet ...";
+            print "sorry, swat does not support $http_method methods yet \n";
             next ROUTE;
         }
 
-        print "generate swat route for $route ... \n";
-        mkdir "swat/$route";
-
-        print "generate swat data for $http_method $route ... \n";
         my $filename = "swat/$route/";
-        $filename.=lc($http_method); $filename.=".txt";
-        open(my $fh, '>', $filename) or die "Could not open file '$filename' $!";
-        print $fh "200 OK\n";
-        close $fh;
+        
+        if (-e $filename and !$force){
+
+            print "skip route $route - swat test already exist, use --force to override existed routes \n";
+            next ROUTE;
+
+        }else{
+
+            print "generate swat route for $route ... \n";
+            mkdir "swat/$route";
+
+            print "generate swat data for $http_method $route ... \n";
+
+            $filename.=lc($http_method); $filename.=".txt";
+            open(my $fh, '>', $filename) or die "Could not open file '$filename' $!";
+            print $fh "200 OK\n";
+            close $fh;
+        }
 
    }
 
@@ -99,7 +109,7 @@ Mojolicious::Command::swat - Swat command
 
 L<Mojolicious::Command::swat> generate swat tests for mojo routes.
 
-This command walk through all availbale routes and generate a swat test for every one. 
+This command walk through all available routes and generate a swat test for every one. 
 POST and GET http requests are only supported ( might be changed in the future ).
 
 
@@ -150,7 +160,7 @@ POST and GET http requests are only supported ( might be changed in the future )
 
 =head1 install Mojolicious::Command::swat
 
-    sudo cpanm --mirror-only --mirror https://stratopan.com/melezhik/mojolicious-command-swat/master Mojolicious::Command::swat
+    sudo cpanm Mojolicious::Command::swat    
 
 =head2 bootstrap swat tests
 
@@ -165,7 +175,7 @@ POST and GET http requests are only supported ( might be changed in the future )
 
 =head2 specify routes checks
 
-This phase might be skiped as preliminary `200 OK` checks are already added on bootstrap phase. But you may define ones more. 
+This phase might be skipped as preliminary `200 OK` checks are already added on bootstrap phase. But you may define ones more. 
 For complete documentation on *how to write swat tests*  please visit  https://github.com/melezhik/swat
 
     $ echo ROOT >> swat/get.txt
