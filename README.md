@@ -98,7 +98,7 @@ For complete documentation on \*how to write swat tests\*  please visit  https:/
     /home/vagrant/.swat/reports/http://127.0.0.1:3000/00.t ..............
     # start swat for http://127.0.0.1:3000// | is swat package 0
     # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
-    ok 1 - successfull response from GET http://127.0.0.1:3000/
+    ok 1 - successful response from GET http://127.0.0.1:3000/
     # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000///content.GET.txt
     ok 2 - GET / returns 200 OK
     ok 3 - GET / returns ROOT
@@ -107,7 +107,7 @@ For complete documentation on \*how to write swat tests\*  please visit  https:/
     /home/vagrant/.swat/reports/http://127.0.0.1:3000/hello/00.post.t ...
     # start swat for http://127.0.0.1:3000//hello | is swat package 0
     # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
-    ok 1 - successfull response from POST http://127.0.0.1:3000/hello
+    ok 1 - successful response from POST http://127.0.0.1:3000/hello
     # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000//hello/content.POST.txt
     ok 2 - POST /hello returns 200 OK
     ok 3 - POST /hello returns HELLO
@@ -116,7 +116,7 @@ For complete documentation on \*how to write swat tests\*  please visit  https:/
     /home/vagrant/.swat/reports/http://127.0.0.1:3000/hello/world/00.t ..
     # start swat for http://127.0.0.1:3000//hello/world | is swat package 0
     # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
-    ok 1 - successfull response from GET http://127.0.0.1:3000/hello/world
+    ok 1 - successful response from GET http://127.0.0.1:3000/hello/world
     # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000//hello/world/content.GET.txt
     ok 2 - GET /hello/world returns 200 OK
     ok 3 - GET /hello/world returns HELLO WORLD
