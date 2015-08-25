@@ -108,7 +108,7 @@ Mojolicious::Command::swat - Swat command
 
 =head1 DESCRIPTION
 
-L<Mojolicious::Command::swat> generate swat tests for mojo routes.
+L<Mojolicious::Command::swat> generate L<swat|https://github.com/melezhik/swat> tests for mojo routes.
 
 This command walk through all available routes and generate a swat test for every one. 
 POST and GET http requests are only supported ( might be changed in the future ).
@@ -126,7 +126,7 @@ POST and GET http requests are only supported ( might be changed in the future )
     mkdir myapp
     cd myapp
     mojo generate lite_app myapp.pl
-    
+
 =head2 define routes
 
 
@@ -227,9 +227,9 @@ For complete documentation on *how to write swat tests*  please visit  https://g
     Files=3, Tests=9,  0 wallclock secs ( 0.02 usr  0.00 sys +  0.02 cusr  0.00 csys =  0.04 CPU)
     Result: PASS
         
-    
+
 =head1 SEE ALSO
 
-L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>.
+L<Mojolicious>, L<Mojolicious::Guides>, L<http://mojolicio.us>, L<https://github.com/melezhik/swat>
 
 =cut
