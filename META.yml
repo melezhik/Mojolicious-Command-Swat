@@ -20,4 +20,4 @@ requires:
   Mojolicious: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: v0.0.3
+version: 0.0.4
