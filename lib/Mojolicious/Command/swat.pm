@@ -1,20 +1,31 @@
 package Mojolicious::Command::swat;
 
-our $VERSION = '0.0.4';
+our $VERSION = '0.0.5';
 
 use Mojo::Base 'Mojolicious::Command';
 
 use re 'regexp_pattern';
 use Getopt::Long qw(GetOptionsFromArray);
+use File::Path qw(make_path);
 
 has description => 'Show available routes';
 has usage => sub { shift->extract_usage };
 
 sub run {
+
   my ($self, @args) = @_;
 
   GetOptionsFromArray \@args, 'f|force' => \my $force;
 
+  mkdir 'swat';
+
+  my $hostname_file = 'swat/host';
+
+  open(my $fh, '>', $hostname_file) or die "Could not open file $hostname_file: $!";
+  print $fh "http://127.0.0.1:3000";
+  close $fh;
+    
+ 
   my $rows = [];
 
     _walk($_, 0, $rows, 0) for @{$self->app->routes->children};
@@ -24,7 +35,7 @@ sub run {
         my $http_method = $i->[1];
         my $route  = $i->[0];
 
-        unless ($http_method=~/GET|POST/i){
+        unless ($http_method=~/GET|POST|DELETE|PUT/i){
             print "sorry, swat does not support $http_method methods yet \n";
             next ROUTE;
         }
@@ -39,7 +50,7 @@ sub run {
         }else{
 
             print "generate swat route for $route ... \n";
-            mkdir "swat/$route";
+            make_path("swat/$route");
 
             print "generate swat data for $http_method $route ... \n";
 

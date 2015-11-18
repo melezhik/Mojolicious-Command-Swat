@@ -1,4 +1,4 @@
-CHANGES.md
+Changes
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
@@ -8,7 +8,6 @@ inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Mojolicious/Command/swat.pm
-makedist.bash
 Makefile
 Makefile.PL
 MANIFEST			This list of files
