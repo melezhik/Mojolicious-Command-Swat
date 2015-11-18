@@ -17,11 +17,11 @@ Mojolicious::Command::swat - Swat command
 
 * This command walks through all available routes and generates a swat test for every one. 
 
-# Install
+# INSTALL
 
     cpanm Mojolicious::Command::swat
 
-# Hello world example 
+# EXAMPLE
 
 ## install mojo
 
