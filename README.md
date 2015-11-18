@@ -17,7 +17,11 @@ Mojolicious::Command::swat - Swat command
 
 * This command walks through all available routes and generates a swat test for every one. 
 
-# Hello World Example 
+# Install
+
+    cpanm Mojolicious::Command::swat
+
+# Hello world example 
 
 ## install mojo
 
@@ -30,7 +34,7 @@ Mojolicious::Command::swat - Swat command
     mojo generate lite_app myapp.pl
     
 
-## define routes
+## define http resources ( mojo routes )
 
     $ nano myapp.pl
 
@@ -61,10 +65,6 @@ Mojolicious::Command::swat - Swat command
     /hello        POST  hello
     /hello/world  GET   helloworld
 
-# install Mojolicious::Command::swat
-
-    sudo cpanm Mojolicious::Command::swat    
-
 ## bootstrap swat tests
 
     $ ./myapp.pl swat
@@ -89,10 +89,6 @@ For complete documentation on \*how to write swat tests\*  please visit  https:/
 
     $ morbo ./myapp.pl
     Server available at http://127.0.0.1:3000
-
-## install swat
-
-    sudo cpanm swat
 
 ## run swat tests
 
