@@ -11,10 +11,11 @@ Mojolicious::Command::swat - Swat command
 
 # DESCRIPTION
 
-[Mojolicious::Command::swat](https://metacpan.org/pod/Mojolicious::Command::swat) generate [swat](https://github.com/melezhik/swat) tests for mojo routes.
+[Mojolicious::Command::swat](https://metacpan.org/pod/Mojolicious::Command::swat) 
 
-This command walk through all available routes and generate a swat test for every one. 
-POST and GET http requests are only supported ( might be changed in the future ).
+* Generates [swat](https://github.com/melezhik/swat) swat tests scaffolding for mojo application.
+
+* This command walks through all available routes and generates a swat test for every one. 
 
 # Hello World Example 
 
@@ -74,9 +75,10 @@ POST and GET http requests are only supported ( might be changed in the future )
     generate swat route for /hello/world ...
     generate swat data for GET /hello/world ...
 
-## specify routes checks
+## specify swat [check lists](https://github.com/melezhik/swat#swat-check-lists)
 
-This phase might be skipped as preliminary \`200 OK\` checks are already added on bootstrap phase. But you may define ones more. 
+This phase might be skipped as preliminary \`200 OK\` checks are already added on bootstrap phase. But you may define more. 
+
 For complete documentation on \*how to write swat tests\*  please visit  https://github.com/melezhik/swat
 
     $ echo ROOT >> swat/get.txt
@@ -94,40 +96,7 @@ For complete documentation on \*how to write swat tests\*  please visit  https:/
 
 ## run swat tests
 
-    $ swat ./swat/  http://127.0.0.1:3000
-    /home/vagrant/.swat/reports/http://127.0.0.1:3000/00.t ..............
-    # start swat for http://127.0.0.1:3000// | is swat package 0
-    # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
-    ok 1 - successful response from GET http://127.0.0.1:3000/
-    # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000///content.GET.txt
-    ok 2 - GET / returns 200 OK
-    ok 3 - GET / returns ROOT
-    1..3
-    ok
-    /home/vagrant/.swat/reports/http://127.0.0.1:3000/hello/00.post.t ...
-    # start swat for http://127.0.0.1:3000//hello | is swat package 0
-    # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
-    ok 1 - successful response from POST http://127.0.0.1:3000/hello
-    # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000//hello/content.POST.txt
-    ok 2 - POST /hello returns 200 OK
-    ok 3 - POST /hello returns HELLO
-    1..3
-    ok
-    /home/vagrant/.swat/reports/http://127.0.0.1:3000/hello/world/00.t ..
-    # start swat for http://127.0.0.1:3000//hello/world | is swat package 0
-    # swat version v0.1.19 | debug 0 | try num 2 | ignore http errors 0
-    ok 1 - successful response from GET http://127.0.0.1:3000/hello/world
-    # data file: /home/vagrant/.swat/reports/http://127.0.0.1:3000//hello/world/content.GET.txt
-    ok 2 - GET /hello/world returns 200 OK
-    ok 3 - GET /hello/world returns HELLO WORLD
-    1..3
-    ok
-    All tests successful.
-    Files=3, Tests=9,  0 wallclock secs ( 0.02 usr  0.00 sys +  0.02 cusr  0.00 csys =  0.04 CPU)
-    Result: PASS
-        
-    
-
 # SEE ALSO
 
-[Mojolicious](https://metacpan.org/pod/Mojolicious), [Mojolicious::Guides](https://metacpan.org/pod/Mojolicious::Guides), [http://mojolicio.us](http://mojolicio.us), [https://github.com/melezhik/swat](https://github.com/melezhik/swat)
+* [swat](https://github.com/melezhik/swat)
+* [Mojolicious](https://metacpan.org/pod/Mojolicious)
